@@ -1,0 +1,36 @@
+<div style="margin-top: 20px">
+  <form #benchmarkForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input class="form-control" id="name" required name="name" [(ngModel)]="index.name" #name="ngModel"/>
+    </div>
+    <div class="form-group">
+      <label for="weight">weight</label>
+      <input type="number" class="form-control" id="weight" PercentDirective #weight="ngModel" 
+            name="weight" [(ngModel)]="index.weight"/>
+        <div style="background-color: orange; width: 30%;" [hidden]="weight.pristine || weight.valid">
+            <p style="color: white">Must be between 1 and 100</p>
+        </div>
+    </div>
+    <div>
+        <button (click)="addIndex()" [disabled]="!benchmarkForm.valid">Add</button>
+    </div>
+  </form>
+</div>
+
+
+<div>
+    <h1>Benchmark Composition</h1>
+    <table>
+        <thead>
+            <td>Name</td>
+            <td>weight</td>
+        </thead>
+        <tbody>
+            <tr *ngFor="let anIndex of benchmark">
+                <td>{{anIndex.name}}</td>
+                <td>{{anIndex.weight}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

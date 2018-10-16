@@ -1,0 +1,17 @@
+<div>
+  <div style="display: inline-block">
+    Denna returnerar från promise<br />
+    {{fromPromise}}<br />
+    {{promiseDepending}}<br />
+    <button (click)="getFromPromise()">Promise</button>
+
+  </div>
+  <div style="display: inline-block; margin-left: 15px">
+    Denna returnerar från subscription<br />
+    {{fromSubscription}}<br />
+    {{subscriptionDepending}}<br />
+    <button (click)="getFromSubscription()">Subscription</button>
+  </div>
+</div>
+
+<Benchmark></Benchmark>
